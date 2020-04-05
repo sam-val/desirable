@@ -173,7 +173,7 @@ def play_game():
                     elif answer3 > 10:
                          raise NarcissismException
                     elif 1 <= answer3 < 4:
-                         print("\nThat's okay, a lot people don't link they are attractive")
+                         print("\nThat's okay, a lot people don't think they are attractive")
                          points += 2
                          break
                     elif 4 <= answer3 < 7:
@@ -193,7 +193,7 @@ def play_game():
                except NarcissismException:
                     in_game_message = "Narcissist Detected! One Point Forfeited...\nNow just rate yourself between 1 and 10 please: "
                     points -= 1
-          time.sleep(4)
+          time.sleep(3)
           calculate_message = "Calculate"
           timeout = time.time() + random.randrange(3, 5)
           while True:
