@@ -220,7 +220,6 @@ def switch(x):
 def program(instruction, message):
      clear_screen = lambda: os.system('cls' if os.name == 'nt' else 'clear')
      clear_screen()
-     print(accounts_file_path)
      print(instruction)
      print(message)
      choice = input("Type your option: ")
