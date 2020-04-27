@@ -11,7 +11,7 @@ def sign_in():
           password = input("Password: ")
           username.strip()
           password.strip()
-          with open('accounts.txt', 'r') as f:
+          with open(accounts_file_path, 'r') as f:
                if ("{"+username+":"+password+"}") not in f.read():
                     message = "Wrong username or password"
                else:
@@ -41,7 +41,7 @@ def create_account():
                 if '{' in username or ':' in username or '}' in username:
                      print("Username should not contain '{', '}' or ':' character!")
                 else:
-                    with open('accounts.txt', 'r+') as f:
+                    with open(accounts_file_path, 'r+') as f:
                          if '{'+username+':' not in f.read():
                               break
                          else:
@@ -58,7 +58,7 @@ def create_account():
                     else:
                          print("---Password reentered incorrectly---")
 
-          with open('accounts.txt', 'a+') as f:
+          with open(accounts_file_path, 'a+') as f:
                f.write('{{{}:{}}}'.format(username, password))
 
           message = "---you just created an account---"
@@ -220,6 +220,7 @@ def switch(x):
 def program(instruction, message):
      clear_screen = lambda: os.system('cls' if os.name == 'nt' else 'clear')
      clear_screen()
+     print(accounts_file_path)
      print(instruction)
      print(message)
      choice = input("Type your option: ")
@@ -239,9 +240,8 @@ message = "---You're not signed in---"
 instruction = "Type:\n0 to end program\n1 to sign in\n2 to create an account\n3 to sign out\n4 to play game"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 accounts_file_path = dir_path+'/accounts.txt'
-
 if not os.path.exists(accounts_file_path):
-     accounts = open('accounts.txt', 'x')
+     accounts = open(accounts_file_path, 'x')
      accounts.close()
 
 while True:
