@@ -13,6 +13,6 @@ python3 rUDesirable.py
 ```
 
 ## Images:
-![image](imgs/review.png)
+![image](/preview/desire.gif)
 
 
